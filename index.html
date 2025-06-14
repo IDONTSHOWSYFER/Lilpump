@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============ META / SEO =========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>$LILPUMP Memecoin – Official Lil Pump Crypto on Solana | ESSKEETIT</title>
+    <meta name="description"
+        content="Official website for Lil Pump’s viral $LILPUMP meme coin on Solana. View tokenomics, learn how to buy, and join the Gucci Gang crypto movement. ESSKETIT!">
+    <meta name="keywords"
+        content="Lil Pump,LILPUMP,meme coin,memecoin,crypto,cryptocurrency,Solana,Pump.fun,Gucci Gang,ESSKEETIT,rap,hip-hop,BC.GAME">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://lilpump.world">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Open-Graph & Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lilpump.world/">
+    <meta property="og:title" content="$LILPUMP Memecoin – Official Lil Pump Crypto on Solana | ESSKEETIT">
+    <meta property="og:description"
+        content="The only official Lil Pump meme token on Solana. Buy $LILPUMP, view tokenomics & join the community.">
+    <meta property="og:image" content="https://lilpump.world/assets/og-lilpump.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="$LILPUMP Memecoin – Official Lil Pump Crypto on Solana | ESSKEETIT">
+    <meta name="twitter:description"
+        content="The only official Lil Pump meme token on Solana. Buy $LILPUMP, view tokenomics & join the community.">
+    <meta name="twitter:image" content="https://lilpump.world/assets/og-lilpump.jpg">
+    <meta name="theme-color" content="#ff1ba9">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"$LILPUMP Memecoin",
+      "url":"https://lilpump.world/",
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://lilpump.world/?q={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    }
+  </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts + Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { display: ["Bebas Neue", "system-ui", "sans-serif"] },
+                    colors: { gangpink: "#ff1ba9", ganggreen: "#00e09e" }
+                }
+            }
+        }
+    </script>
+
+    <!--  Icons & libs  -->
+    <script src="https://kit.fontawesome.com/9cae8f3ffd.js" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-display">
+
+    <!-- ===== Back-to-Top (rose) -->
+    <button id="toTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 rounded-full
+               bg-gangpink text-black shadow-lg opacity-0 scale-90 pointer-events-none
+               transition-all duration-300">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current" aria-hidden="true">
+            <path d="M12 4l-7 8h4v8h6v-8h4z" />
+        </svg>
+    </button>
+
+    <!-- ===== HEADER -->
+    <header class="fixed inset-x-0 top-0 z-40 backdrop-blur-md/60 bg-black/40">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <a href="#home" class="text-2xl sm:text-3xl tracking-widest text-gangpink">$LILPUMP</a>
+            <nav class="hidden md:flex gap-6 uppercase tracking-wider text-xs lg:text-sm">
+                <a href="#about" class="hover:text-gangpink">About</a>
+                <a href="#tokenomics" class="hover:text-gangpink">Tokenomics</a>
+                <a href="#buy" class="hover:text-gangpink">Buy</a>
+                <a href="#socials" class="hover:text-gangpink">Socials</a>
+                <a href="#gallery" class="hover:text-gangpink">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <img src="assets/img/lilpump.webp" alt="Lil Pump wearing Gucci"
+            class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/90"></div>
+
+        <div class="relative z-10 text-center max-w-xl px-4">
+            <h1 class="font-display tracking-widest text-gangpink drop-shadow-md text-6xl xs:text-7xl sm:text-8xl">
+                ESSKEETIT</h1>
+            <p class="mt-4 xs:text-xl sm:text-2xl">Official <strong>$LILPUMP</strong> memecoin on
+                <strong>Solana</strong></p>
+            <a href="#buy"
+                class="inline-block mt-8 px-8 py-3 rounded-full bg-gangpink hover:bg-pink-600 text-black font-semibold transition"
+                rel="nofollow">Buy Now</a>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT -->
+    <section id="about" class="relative fade-in py-20 xs:py-24 px-4 sm:px-6 lg:px-0 max-w-5xl mx-auto">
+        <h2 class="font-display text-center text-gangpink tracking-widest text-4xl sm:text-5xl mb-6">Who is Lil Pump?
+        </h2>
+
+        <p class="text-gray-300 leading-relaxed sm:text-lg mb-4">
+            <strong>Lil Pump</strong> (Gazzy Garcia) exploded onto the rap scene with the diamond-studded hit
+            <em>Gucci Gang</em>. Now he’s bringing that same raw energy to Web3 with <strong>$LILPUMP</strong>,
+            the 100 % community meme coin launched on <strong>Solana</strong> via <em>Pump.fun</em>.
+        </p>
+        <p class="text-gray-300 leading-relaxed sm:text-lg">
+            No presale, no insiders — just pure, unfiltered hype powered by lightning-fast Solana.
+        </p>
+
+        <!-- TOKEN ABOUT SECTION ­­­— remplacer l’iframe -->
+        <div class="mt-10 aspect-w-16 aspect-h-9 max-w-4xl mx-auto overflow-hidden rounded-xl shadow-xl">
+            <video id="gg-video" class="w-full h-full object-cover rounded-xl" poster="assets/img/lilpump-gucci.webp"
+                controls preload="metadata" playsinline muted autoplay>
+                <source src="/assets/video/guccigang.mp4" type="video/mp4">
+                Désolé, votre navigateur ne supporte pas la vidéo HTML 5.
+            </video>
+        </div>
+    </section>
+
+    <!-- ===== TOKENOMICS -->
+    <section id="tokenomics" class="relative fade-in py-20 xs:py-24 px-4 sm:px-6 lg:px-0">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-display tracking-widest text-ganggreen text-4xl sm:text-5xl mb-6">Tokenomics</h2>
+                <ul class="text-gray-200 sm:text-lg space-y-4">
+                    <li><span class="font-bold text-ganggreen">Total Supply:</span> 1 000 000 000</li>
+                    <li><span class="font-bold text-ganggreen">Taxes:</span> 0 % buy / 0 % sell</li>
+                    <li><span class="font-bold text-ganggreen">Liquidity:</span> LP burned & ownership renounced</li>
+                    <li><span class="font-bold text-ganggreen">Contract:</span>
+                        <a href="https://solscan.io/token/9vrGUHwsC8LyLjQoh3zJb9S53x7A88u49La63qPB6F5t"
+                            class="underline hover:text-white break-all" target="_blank" rel="noopener">
+                            9vrGUHwsC8LyLjQoh3…F5t
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center gap-6">
+                <canvas id="pie" width="300" height="300" class="w-48 h-48 sm:w-72 sm:h-72" role="img"
+                    aria-label="100 percent community supply donut chart"></canvas>
+                <p class="text-gray-400 text-xs italic">100 % community owned</p>
+            </div>
+        </div>
+
+        <!-- CHART DEXSCREENER -->
+        <div class="col-span-2 md:col-span-1 flex flex-col items-center gap-6 mt-12 padding-4">
+            <div class="w-full aspect-video overflow-hidden rounded-xl shadow-xl">
+                <iframe
+                    src="https://dexscreener.com/solana/csycatzwkxywfl8xfpetxibovqurnki4c41gjen5rctq?embed=1&theme=dark&info=0&trades=0"
+                    title="LILPUMP / SOL — Raydium Chart" class="w-full h-full" frameborder="0" loading="lazy"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="text-gray-400 text-xs italic">
+                Live price – powered by DEX Screener
+            </p>
+        </div>
+    </section>
+
+<!-- ===== HOW TO BUY -->
+<section
+  id="buy"
+  class="relative fade-in py-20 xs:py-24 px-4 sm:px-6 lg:px-0 bg-[#111]"
+>
+  <div class="max-w-5xl mx-auto text-center">
+    <h2
+      class="font-display tracking-widest text-gangpink text-4xl sm:text-5xl mb-6"
+    >
+      How to Buy
+    </h2>
+
+    <!-- 3 étapes -->
+    <div class="grid md:grid-cols-3 gap-10 text-gray-300">
+      <!-- 1 -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <img
+          src="assets/img/wallet.png"
+          alt="Phantom wallet"
+          class="w-40 h-40 object-contain"
+          loading="lazy"
+        />
+        <h3 class="text-white font-semibold text-lg mb-1">
+          1 · Get a Solana wallet
+        </h3>
+        <p class="text-sm">
+          Install <strong>Phantom</strong> &amp; top-up with&nbsp;SOL.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <img
+          src="assets/img/swap.png"
+          alt="Swap icon"
+          class="w-60 h-40 object-contain"
+          loading="lazy"
+        />
+        <h3 class="text-white font-semibold text-lg mb-1">2 · Swap</h3>
+        <p class="text-sm">
+          Go to
+          <a
+            href="https://jup.ag"
+            target="_blank"
+            rel="noopener"
+            class="underline"
+            >jup.ag</a
+          >, search <em>LILPUMP</em> &amp; swap SOL → $LILPUMP.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <img
+          src="assets/img/flex.png"
+          alt="Flex"
+          class="w-60 h-40 object-contain"
+          loading="lazy"
+        />
+        <h3 class="text-white font-semibold text-lg mb-1">3 · Flex &amp; repeat</h3>
+        <p class="text-sm">
+          Tweet with <span class="text-gangpink">#ESSKETIT</span> &amp; join the
+          Telegram.
+        </p>
+      </div>
+
+      <!-- Vidéo “How to Buy” : occupe les 3 colonnes -->
+      <div
+        class="col-span-3 mt-10 aspect-[4/4] max-w-4xl mx-auto overflow-hidden rounded-xl shadow-xl"
+      >
+        <video
+          id="gg-video"
+          class="w-full h-full object-cover rounded-xl"
+          poster="assets/img/lilpump-gucci.webp"
+          controls
+          preload="metadata"
+          playsinline
+          muted
+          autoplay
+        >
+          <source src="/assets/video/howtobuy.mp4" type="video/mp4" />
+          Désolé, votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </div>
+    </div>
+
+    <!-- Bouton CTA -->
+    <a
+      href="https://pump.fun"
+      target="_blank"
+      rel="noopener nofollow"
+      class="inline-block mt-10 px-8 py-3 rounded-full bg-ganggreen hover:bg-emerald-500 text-black font-semibold transition"
+    >
+      Go to Pump.fun ↗
+    </a>
+  </div>
+</section>
+
+<!-- ===== PUMP & TRUMP -->
+<section
+  id="pumptrump"
+  class="relative fade-in py-24 px-4 sm:px-6 lg:px-0 bg-[#111] border-t border-gray-700/40"
+>
+  <div class="max-w-6xl mx-auto">
+    <h2
+      class="font-display tracking-widest text-gangpink text-center text-4xl sm:text-5xl mb-12"
+    >
+      PUMP&nbsp;<span class="text-white">&amp;</span>&nbsp;TRUMP
+    </h2>
+
+    <!-- GRID 2 videos + CTA -->
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- American Hero -->
+      <div class="relative aspect-video overflow-hidden rounded-xl shadow-xl">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          class="w-full h-full object-cover"
+        >
+          <source src="/assets/video/american-hero.mp4" type="video/mp4" />
+        </video>
+
+        <!-- NFT overlay -->
+        <img
+          src="/assets/img/nft-pumptrump.jpg"
+          alt="NFT Pump & Trump"
+          class="absolute bottom-4 right-4 w-14 sm:w-32 pointer-events-none ring-2 ring-gangpink rounded-lg"
+        />
+      </div>
+
+      <!-- Trump Meeting -->
+      <div class="relative aspect-video overflow-hidden rounded-xl shadow-xl">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          class="w-full h-full object-cover"
+        >
+          <source src="/assets/video/meeting.mp4" type="video/mp4" />
+        </video>
+
+        <!-- NFT overlay -->
+        <img
+          src="/assets/img/nft-trumpump.jpg"
+          alt="NFT Pump & Trump"
+          class="absolute bottom-4 right-4 w-14 sm:w-32 pointer-events-none ring-2 ring-gangpink rounded-lg"
+        />
+      </div>
+
+      <!-- CTA Button -->
+      <a
+        href="https://drip.haus/nftdemon/set/4e7a3de3-579e-4062-909e-c20a8a39a5e4"
+        target="_blank"
+        class="col-span-2 mx-auto mt-10 w-max px-8 py-3 rounded-full bg-ganggreen hover:bg-emerald-500 text-black font-semibold transition"
+      >
+        View NFT ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GRANDMA PUMP -->
+<section id="grandmapump"
+         class="relative fade-in py-24 px-4 sm:px-6 lg:px-0 bg-black border-t border-gray-700/40">
+  <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
+
+    <h2 class="font-display tracking-widest text-ganggreen text-4xl sm:text-5xl">
+      GRANDMA&nbsp;PUMP
+    </h2>
+
+    <div class="aspect-video w-full overflow-hidden rounded-xl shadow-xl">
+      <video controls playsinline preload="metadata" class="w-full h-full object-cover">
+        <source src="/assets/video/grandma-pump.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <p class="text-gray-300 max-w-xl">
+      She’s 82, she’s on-chain, and she out-trades the whales. <br>
+      Join <strong>Grandma Pump</strong> for live market tea and crochet alpha.
+    </p>
+
+    <a href="https://www.instagram.com/grandmapump90/" target="_blank" rel="noopener"
+       class="px-10 py-3 rounded-full bg-gangpink hover:bg-pink-600
+              text-black font-semibold transition">
+      Follow Grandma on Instagram ↗
+    </a>
+  </div>
+</section>
+
+<!-- ===== SOCIALS -->
+<section id="socials" class="relative fade-in py-20 xs:py-24 px-4 sm:px-6 lg:px-0">
+  <h2 class="font-display tracking-widest text-ganggreen text-4xl sm:text-5xl mb-10 text-center">
+    Follow the Gang
+  </h2>
+
+  <div class="max-w-6xl mx-auto grid xs:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+    <!-- Twitch -->
+    <a href="https://www.twitch.tv/lilpumpworld" target="_blank" aria-label="Twitch"
+       class="group block relative hover:rotate-1 transition">
+      <img src="assets/img/twitch-card.png" alt="Lil Pump Twitch"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+      <i class="fab fa-twitch absolute top-3 right-3 text-white text-2xl drop-shadow"></i>
+    </a>
+    <!-- IG -->
+    <a href="https://instagram.com/lilpump" target="_blank" aria-label="Instagram"
+       class="group block relative hover:rotate-[-2deg] transition">
+      <img src="assets/img/ig-card.png" alt="Lil Pump Instagram"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+      <i class="fab fa-instagram absolute top-3 right-3 text-white text-2xl drop-shadow"></i>
+    </a>
+    <!-- Kick -->
+    <a href="https://kick.com/lilpump" target="_blank" aria-label="Kick"
+       class="group block relative hover:rotate-3 transition">
+      <img src="assets/img/kick-card.png" alt="Lil Pump Kick"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+    </a>
+    <!-- X -->
+    <a href="https://twitter.com/lilpump" target="_blank" aria-label="X / Twitter"
+       class="group block relative hover:rotate-[-1deg] transition">
+      <img src="assets/img/x-card.png" alt="Lil Pump X"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+    </a>
+    <!-- YouTube -->
+    <a href="https://youtube.com/c/lilpump" target="_blank" aria-label="YouTube"
+       class="group block relative hover:rotate-[-3deg] transition">
+      <img src="assets/img/yt-card.png" alt="Lil Pump YouTube"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+      <i class="fab fa-youtube absolute top-3 right-3 text-white text-2xl drop-shadow"></i>
+    </a>
+    <!-- Threads -->
+    <a href="https://threads.net/lilpump" target="_blank" aria-label="Threads"
+       class="group block relative hover:rotate-2 transition">
+      <img src="assets/img/threads-card.png" alt="Lil Pump Threads"
+           class="rounded-xl shadow-lg w-full h-full object-cover group-hover:opacity-90" loading="lazy">
+    </a>
+  </div>
+
+  <p class="text-center text-gray-500 text-xs sm:text-sm mt-12">
+    Not affiliated with Solana or BC.GAME · DYOR · No financial advice
+  </p>
+</section>
+
+<!-- ===== GALLERY -->
+<section id="gallery" class="pin-section relative min-h-screen overflow-hidden">
+  <img src="assets/img/lilpump-gallery.png" alt="Lil Pump gallery background"
+       class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/90"></div>
+  <div class="relative z-10 flex items-center justify-center h-full">
+    <h2 class="font-display text-gangpink drop-shadow-xl text-6xl xs:text-7xl sm:text-8xl">
+      GUCCI GANG
+    </h2>
+  </div>
+</section>
+
+<!-- ===== BC.GAME CTA -->
+<section class="relative fade-in py-24 px-4 sm:px-6 lg:px-0 bg-[#0d0d0d] border-t border-gray-700/40">
+  <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-6">
+    <img src="/assets//img/bc-game.png" loading="lazy"
+         class="w-16 h-16" alt="BC.GAME">
+    <h3 class="font-display tracking-wider text-ganggreen text-3xl">
+      Ready for crypto-casino vibes?
+    </h3>
+    <p class="text-gray-300 max-w-xl">
+      Lil Pump joins forces with <strong>BC.GAME</strong> for exclusive giveaways
+      & rap-fuelled casino nights. Spin the wheel, roll the dice and pump your bags.
+    </p>
+    <a href="https://bc.game" target="_blank" rel="noopener nofollow"
+       class="px-10 py-3 rounded-full bg-gangpink hover:bg-pink-600 text-black font-semibold transition">
+      Play on BC.GAME ↗
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER -->
+<footer class="py-10 flex flex-col items-center gap-4 text-center text-gray-400 text-xs sm:text-sm">
+  <div class="flex gap-4 text-xl">
+    <a href="https://x.com/lilpump" aria-label="X / Twitter" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/x-card.png" alt="X" class="w-4 h-4">
+    </a>
+    <a href="https://www.twitch.tv/lilpumpworld" aria-label="Twitch" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/twitch-card.png" alt="Twitch" class="w-4 h-4">
+    </a>
+    <a href="https://instagram.com/lilpump" aria-label="Instagram" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/ig-card.png" alt="Instagram" class="w-4 h-4">
+    </a>
+    <a href="https://kick.com/lilpump" aria-label="Kick" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/kick-card.png" alt="Kick" class="w-4 h-4">
+    </a>
+    <a href="https://threads.net/lilpump" aria-label="Threads" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/threads-card.png" alt="Threads" class="w-4 h-4">
+    </a>
+    <a href="https://youtube.com/c/lilpump" aria-label="YouTube" class="hover:text-gangpink" target="_blank">
+      <img src="assets/img/yt-card.png" alt="YouTube" class="w-4 h-4">
+    </a>
+  </div>
+  <span>
+    © <span id="year"></span> $LILPUMP — Built with ❤ by the community. ESSKEETIT.
+  </span>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+/*--- Year in footer ---*/
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/*--- GSAP plugins ---*/
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+/* Fade-in sections */
+gsap.utils.toArray('.fade-in').forEach(el=>{
+  gsap.from(el,{opacity:0,y:40,duration:1,ease:'power2.out',
+    scrollTrigger:{trigger:el,start:'top 85%'}})
+});
+
+/* Pin gallery */
+gsap.to('.pin-section',{
+  scrollTrigger:{trigger:'.pin-section',pin:true,scrub:true,end:'+=100%'}
+});
+
+/* Back-to-Top */
+const toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>100){
+    toTop.classList.remove('opacity-0','scale-90','pointer-events-none');
+  }else{
+    toTop.classList.add('opacity-0','scale-90','pointer-events-none');
+  }
+});
+toTop.addEventListener('click',()=>gsap.to(window,{duration:.7,scrollTo:0,ease:'power2.out'}));
+
+/* Chart.js – Tokenomics donut */
+window.addEventListener('load', () => {
+  const ctx=document.getElementById('pie');
+  if(!ctx)return;
+  new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Community'],
+      datasets:[{
+        data:[100],
+        backgroundColor:['#ff1ba9'],
+        borderWidth:0
+      }]
+    },
+    options:{
+      responsive:true,
+      cutout:'65%',
+      animation:{animateRotate:true,animateScale:true},
+      plugins:{legend:{display:false},tooltip:{enabled:false}}
+    }
+  });
+});
+
+/* Service Worker (PWA) */
+if('serviceWorker'in navigator){
+  window.addEventListener('load',
+    ()=>navigator.serviceWorker.register('/sw.js').catch(console.error));
+}
+</script>
+</body>
+</html>
